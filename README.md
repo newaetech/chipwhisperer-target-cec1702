@@ -2,8 +2,8 @@
 
 This repo contains additional information for the CEC1702 target. Note this is only some appendix information, as you'll also want to see the following for full details:
 
-* NewAE Wiki Page: [https://wiki.newae.com/CW308T-CEC1702](wiki.newae.com/CW308T-CEC1702)
-* Firmware example for hardware AES, part of main ChipWhisperer firmware example repo: [https://github.com/newaetech/chipwhisperer/tree/develop/hardware/victims/firmware/CEC1702](chipwhisperer/hardware/victims/firmware/CEC1702)
+* NewAE Wiki Page: [wiki.newae.com/CW308T-CEC1702](https://wiki.newae.com/CW308T-CEC1702)
+* Firmware example for hardware AES, part of main ChipWhisperer firmware example repo: [chipwhisperer/hardware/victims/firmware/CEC1702](https://github.com/newaetech/chipwhisperer/tree/develop/hardware/victims/firmware/CEC1702)
 
 ## E-Fuse Project Example ##
 
