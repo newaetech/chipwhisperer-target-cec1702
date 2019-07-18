@@ -1,16 +1,15 @@
-# CEC1702-EFUSE
-Firmware to modify EFUSE bits in CEC1702
+# ChipWhisperer CEC1702 Target #
+
+This repo contains additional information for the CEC1702 target. Note this is only some appendix information, as you'll also want to see the following for full details:
 
 **BEFORE USE, GO TO `Project>Edit Project` and make sure `Data Type Size` is set to `other (int 4 byte)`. If this is not done, the resulting firmware will not modify the efuse bits correctly.**
 
-To use, modify efuse_data.h with the index and value of the bytes your want to modify. For example, the first index/value pair disables ATE mode by setting bit 7 of byte 35 to 1. This table should be terminated by index 0xDEAD and value 0xFF, as is shown in the table.
 
-It is strongly recommended that the user read [the CW308T-CEC1702 wiki page](https://wiki.newae.com/CW308T-CEC1702) before running or modifying this firmware (in particular the ATE and EFUSE section) as modifying EFUSE has the potential to irreversibly harm the device.
+* NewAE Wiki Page: [wiki.newae.com/CW308T-CEC1702](https://wiki.newae.com/CW308T-CEC1702)
+* Firmware example for hardware AES, part of main ChipWhisperer firmware example repo: [chipwhisperer/hardware/victims/firmware/CEC1702](https://github.com/newaetech/chipwhisperer/tree/develop/hardware/victims/firmware/CEC1702)
 
-## Modifications from mikroC's firmware
-This firmware has been modified from mikroC's original example due to differences between development boards and the CW308 target board. Both their original code and the instructions given in the CEC1702's datasheet assumed that the firmware has a way to ground and power the VREF pin, as FSOURCE_EN_READ and FSOURCE_EN_PRGM are both 1 when changing from read to program (and vice versa), which shorts the ground and power pins.
+## E-Fuse Project Example ##
 
-Instead, this firmware sets both bits low and checks them before setting the other high.
+The "efuse" directory contains an example of setting EFUSE data. This is best done by using an external JTAG programming to load the file into internal SRAM & running the program.
 
-## Other Notes
-The firmware check which locations and values the user is attempting to modify, so if you need to change other bits, you'll need to edit this check.
+The example application only disables ATE mode (used by us in production). But you can use this program to enable SPI flash encryption, setup ECC certificates, etc.
