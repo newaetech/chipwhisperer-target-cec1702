@@ -1,6 +1,8 @@
 # CEC1702-EFUSE
 Firmware to modify EFUSE bits in CEC1702
 
+**BEFORE USE, GO TO `Project>Edit Project` and make sure `Data Type Size` is set to `other (int 4 byte)`. If this is not done, the resulting firmware will not modify the efuse bits correctly.**
+
 To use, modify efuse_data.h with the index and value of the bytes your want to modify. For example, the first index/value pair disables ATE mode by setting bit 7 of byte 35 to 1. This table should be terminated by index 0xDEAD and value 0xFF, as is shown in the table.
 
 It is strongly recommended that the user read [the CW308T-CEC1702 wiki page](https://wiki.newae.com/CW308T-CEC1702) before running or modifying this firmware (in particular the ATE and EFUSE section) as modifying EFUSE has the potential to irreversibly harm the device.
